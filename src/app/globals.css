@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-karla: "Karla", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #57534a;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-gold text-white hover:bg-brand-goldDark;
+  }
+  .btn-outline {
+    @apply btn border border-brand-gold/60 text-brand-gold hover:bg-brand-gold hover:text-white;
+  }
+  .btn-outline-light {
+    @apply btn border border-white/70 text-white hover:bg-white hover:text-brand-goldDark;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold;
+  }
+  .h-section {
+    @apply text-2xl font-bold leading-tight text-brand-goldDark sm:text-3xl md:text-[34px];
+  }
+  .lede {
+    @apply mx-auto max-w-2xl text-[15px] leading-relaxed text-brand-body;
+  }
+}
+
+/* Simple fade-up utility */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s ease both;
+}
