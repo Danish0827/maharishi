@@ -112,15 +112,15 @@ const FAQS = [
 ];
 
 export default function HomePage() {
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffset(window.scrollY * 0.15); // speed (0.15 = slow)
-    };
+  // const [offset, setOffset] = useState(0);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setOffset(window.scrollY * 0.15); // speed (0.15 = slow)
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   return (
     <></>
     // <>

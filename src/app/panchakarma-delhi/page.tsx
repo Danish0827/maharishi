@@ -1,3 +1,4 @@
+'use client'
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
@@ -8,12 +9,13 @@ import Reveal from "@/components/Reveal";
 import { IMG } from "@/lib/images";
 import Header from "@/components/Header";
 import HospitalFooter from "@/components/HospitalFooter";
+import { useEffect, useState } from "react";
 
-export const metadata: Metadata = {
-  title: "Vaidya-Led Panchakarma in Delhi NCR",
-  description:
-    "Classical, supervised Panchakarma in Delhi NCR - personalised assessment, day-care and residential pathways at a NABH-accredited Ayurvedic hospital.",
-};
+// export const metadata: Metadata = {
+//   title: "Vaidya-Led Panchakarma in Delhi NCR",
+//   description:
+//     "Classical, supervised Panchakarma in Delhi NCR - personalised assessment, day-care and residential pathways at a NABH-accredited Ayurvedic hospital.",
+// };
 
 const HERO_BADGES = [
   { title: "Vaidya-Led", text: "Assessed before therapy" },
@@ -26,19 +28,19 @@ const NOT_GENERIC = [
     title: "Assessment First",
     text: "Panchakarma begins with a Vaidya assessment - never a fixed package. Your prakriti and current state decide the protocol.",
     tone: "warm" as const,
-    src: IMG.shirodhara,
+    src: 'images/ayurvedic/1.webp',
   },
   {
     title: "Prepared, Not Rushed",
     text: "Poorva karma (preparation) with oleation and fomentation readies the body so the main therapies work safely.",
     tone: "deep" as const,
-    src: IMG.herbalOil,
+    src: 'images/ayurvedic/2.webp',
   },
   {
     title: "Supervised Detox",
     text: "Every procedure is delivered by trained therapists under physician oversight, with rest and diet built in.",
     tone: "sage" as const,
-    src: IMG.oilTherapy,
+    src: 'images/ayurvedic/3.webp',
   },
 ];
 
@@ -66,11 +68,11 @@ const THERAPIES = [
 ];
 
 const JOURNEY = [
-  { label: "Assessment", text: "Vaidya evaluates prakriti and suitability.", src: IMG.shirodhara },
-  { label: "Preparation", text: "Oleation and fomentation to ready the body.", src: IMG.herbalOil },
-  { label: "Main Therapy", text: "Supervised classical cleansing procedures.", src: IMG.hotStone },
-  { label: "Recovery", text: "Diet, rest and rejuvenation protocol.", src: IMG.diet },
-  { label: "Follow-Up", text: "Lifestyle plan to sustain the results.", src: IMG.yogaMountain },
+  { label: "Assessment", text: "Vaidya evaluates prakriti and suitability.", src: 'images/journey/1.webp' },
+  { label: "Preparation", text: "Oleation and fomentation to ready the body.", src: 'images/journey/2.webp' },
+  { label: "Main Therapy", text: "Supervised classical cleansing procedures.", src: 'images/journey/3.webp' },
+  { label: "Recovery", text: "Diet, rest and rejuvenation protocol.", src: 'images/journey/4.webp' },
+  { label: "Follow-Up", text: "Lifestyle plan to sustain the results.", src: 'images/journey/5.webp' },
 ];
 
 const BEFORE = [
@@ -104,6 +106,15 @@ const FAQS = [
 ];
 
 export default function PanchakarmaPage() {
+  const [offset, setOffset] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffset(window.scrollY * 0.15); // speed (0.15 = slow)
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
      <Header />
@@ -118,7 +129,15 @@ export default function PanchakarmaPage() {
         secondaryCta="Talk to a Vaidya"
       />
       {/* Not generic */}
-      <Section className="bg-white">
+      <Section id="services" className="bg-white relative">
+        <img
+          src="/images/water1.svg"
+          alt="Watermark"
+          className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
+          style={{
+            transform: `translateY(calc(-50% + ${offset}px))`,
+          }}
+        />
         <SectionHeading
           eyebrow="The Right Way"
           title="Panchakarma Is Not a Generic Detox Package"
@@ -131,19 +150,27 @@ export default function PanchakarmaPage() {
         </div>
       </Section>
       {/* Two column cards */}
-      <Section className="bg-brand-cream">
+       <Section id="who-should-consult" className="bg-white relative ">
+        <img
+          src="/images/water2.svg"
+          alt="Watermark"
+          className="absolute left-0 top-1/2 z-0 opacity-1 pointer-events-none"
+          style={{
+            transform: `translateY(calc(-50% + ${offset}px))`,
+          }}
+        />
         <div className="grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <div className="h-full rounded-2xl bg-gradient-to-br from-brand-goldDark to-brand-goldDeep p-8 text-white md:p-10">
+            <div className="h-full  bg-gradient-to-br from-brand-goldDark to-brand-goldDeep p-8 text-white md:p-10">
               <h3 className="text-xl font-bold md:text-2xl">Who Should Consider Panchakarma?</h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-white/80">
+              <p className="mt-3 leading-relaxed text-white/80">
                 Panchakarma helps when everyday treatments only manage symptoms.
                 It is ideal if you relate to any of the following:
               </p>
               <ul className="mt-6 space-y-3">
                 {CONSIDER.map((c) => (
-                  <li key={c} className="flex items-start gap-3 text-[14px] leading-relaxed text-white/90">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-goldLight" />
+                  <li key={c} className="flex items-start gap-3 leading-relaxed text-white/90">
+                    <span className="mt-1 h-1.5 w-1.5 shrink-0  bg-brand-goldLight" />
                     {c}
                   </li>
                 ))}
@@ -156,11 +183,11 @@ export default function PanchakarmaPage() {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <div className="flex h-full flex-col rounded-2xl border border-brand-line bg-white p-8 md:p-10">
+            <div className="flex h-full flex-col  border border-brand-line bg-white p-8 md:p-10">
               <h3 className="text-xl font-bold text-brand-goldDark md:text-2xl">
                 What Makes Maharishi Panchakarma Different?
               </h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-brand-body">
+              <p className="mt-3 leading-relaxed text-brand-body">
                 Classical protocols with the accountability of a modern,
                 NABH-accredited hospital.
               </p>
@@ -216,7 +243,15 @@ export default function PanchakarmaPage() {
       </Section>
 
       {/* Therapies */}
-      <Section className="bg-brand-cream">
+      <Section className="bg-white relative">
+         <img
+          src="/images/water4.svg"
+          alt="Watermark"
+          className="absolute right-0 top-0 z-0 opacity-1 pointer-events-none"
+          style={{
+            transform: `translateY(calc(-50% + ${offset}px))`,
+          }}
+        />
         <SectionHeading
           eyebrow="Classical Support"
           title="Classical Ayurvedic Therapies and Support"
@@ -256,15 +291,16 @@ export default function PanchakarmaPage() {
       </Section>
 
       {/* Before + travel advisory */}
-      <Section className="bg-brand-cream">
-        <div className="grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <SectionHeading
+      <Section id="why" className="bg-white">
+        <SectionHeading
               eyebrow="Prepare Well"
               title="Before Starting Panchakarma"
               intro="A little preparation helps therapy work better and keeps you comfortable."
-              center={false}
+            
             />
+        <div className="grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr] pt-10">
+          <div>
+            
             <ul className="mt-8 space-y-4">
               {BEFORE.map((b) => (
                 <CheckItem key={b}>{b}</CheckItem>
@@ -272,7 +308,7 @@ export default function PanchakarmaPage() {
             </ul>
           </div>
           <Reveal delay={80}>
-            <div className="rounded-2xl border border-brand-line bg-white p-7">
+            <div className=" border border-brand-line bg-white p-7">
               <h3 className="text-lg font-bold text-brand-goldDark">
                 Travel Advisory for Nearby Cities
               </h3>
@@ -325,7 +361,15 @@ export default function PanchakarmaPage() {
       </Section>
 
       {/* FAQ */}
-      <Section id="faq" className="bg-brand-cream">
+      <Section id="faq" className="bg-white relative">
+         <img
+          src="/images/water3.svg"
+          alt="Watermark"
+          className="absolute left-0 top-1/2 z-0 opacity-1 pointer-events-none"
+          style={{
+            transform: `translateY(calc(-50% + ${offset}px))`,
+          }}
+        />
         <SectionHeading eyebrow="FAQs" title="Frequently Asked Questions" />
         <div className="mt-10 grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
@@ -349,9 +393,9 @@ export default function PanchakarmaPage() {
 
 function Stat({ n, label }: { n: string; label: string }) {
   return (
-    <div>
+    <div className="text-center">
       <p className="text-2xl font-extrabold text-brand-goldLight">{n}</p>
-      <p className="text-[11px] leading-snug text-white/70">{label}</p>
+      <p className=" leading-snug text-white/70">{label}</p>
     </div>
   );
 }

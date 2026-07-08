@@ -24,7 +24,7 @@ export default function Hero({
   secondaryCta?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-brand-goldDeep pt-28 px-5">
+    <section className="relative overflow-hidden bg-brand-goldDeep pt-20 px-5">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#5E4A18] via-[#6E5719] to-[#8A6C24]" />
@@ -38,7 +38,6 @@ export default function Hero({
         <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_75%_30%,rgba(199,166,79,.8),transparent_55%)]" />
         <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-black/70 via-black/40 to-transparent lg:w-2/3" />
       </div>
-
       <div className="container mx-auto relative z-10 grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Copy */}
         <div className="max-w-2xl animate-fade-up">
@@ -53,12 +52,12 @@ export default function Hero({
             {intro}
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link href="#book" className="rounded-md bg-brand-goldLight px-6 py-3 text-center text-sm font-semibold text-brand-goldDeep transition-colors hover:bg-white">
+            <Link href="#book" className="bg-brand-goldLight px-6 py-3 text-center  font-semibold text-brand-goldDeep transition-colors hover:bg-white">
               {primaryCta}
             </Link>
-            <a href="tel:+919811000000" className="btn-outline-light">
+            {/* <a href="tel:+919811000000" className="btn-outline-light rounded-none text-base">
               {secondaryCta}
-            </a>
+            </a> */}
           </div>
           <div className="mt-8 grid max-w-lg grid-cols-1 gap-3 sm:grid-cols-3">
             {badges.map((b) => (
@@ -66,7 +65,6 @@ export default function Hero({
             ))}
           </div>
         </div>
-        {/* Form */}
         <div className="lg:pl-4">
           <ConsultationForm variant={formVariant} />
         </div>

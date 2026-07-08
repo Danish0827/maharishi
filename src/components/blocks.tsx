@@ -79,8 +79,8 @@ export function ImageCard({
       <div className="group flex h-full flex-col overflow-hidden  ">
         <GradientMedia tone={tone} src={src} overlay={0.5} className="h-[400px]">
           <div className="relative z-10 p-4">
-            <h3 className="text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-bold text-[#74570F] drop-shadow-sm pb-4">{title}</h3>
-            <p className="flex-1 text-sm lg:text-base xl:text-lg  text-[#383838]">{text}</p>
+            <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-[#74570F] drop-shadow-sm pb-4">{title}</h3>
+            <p className="flex-1 text-sm lg:text-base text-[#383838]">{text}</p>
           </div>
         </GradientMedia>
         {cta && (
@@ -136,20 +136,22 @@ export function StepCard({
   delay?: number;
 }) {
   return (
-    <Reveal delay={delay} className="h-full">
+    <Reveal delay={delay} className="h-[400px]">
       <GradientMedia
         tone={tone}
         src={src}
         overlay={0.5}
-        className="h-56 rounded-xl"
+        className="h-[400px]"
       >
         <div className="relative z-10 flex h-full w-full flex-col justify-between p-4">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-sm font-bold text-brand-goldDark">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-sm font-bold text-brand-goldDark shrink-0">
             {n}
           </span>
-          <div className="rounded-lg bg-black/35 p-3 backdrop-blur-[1px]">
-            <h4 className="text-sm font-bold text-white">{label}</h4>
-            <p className="mt-1 text-[12px] leading-snug text-white/85">{text}</p>
+          <div className="rounded-lg p-3 backdrop-blur-[1px]">
+            {/* <h4 className="text-sm font-bold text-white">{label}</h4>
+            <p className="mt-1 text-[12px] leading-snug text-white/85">{text}</p> */}
+             <h3 className="text-lg lg:text-xl xl:text-2xl  font-bold text-white/90 drop-shadow-sm pb-4">{label}</h3>
+            <p className="flex-1 text-sm lg:text-base  text-white">{text}</p>
           </div>
         </div>
       </GradientMedia>
@@ -180,12 +182,12 @@ export function CtaBand({
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-white/80">{text}</p>
               <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link href={href} className="rounded-md bg-brand-goldLight px-7 py-3 text-sm font-semibold text-brand-goldDeep transition-colors hover:bg-white">
+                <Link href={href} className="bg-brand-goldLight px-7 py-3 text-sm font-semibold text-brand-goldDeep transition-colors hover:bg-white">
                   {primary}
                 </Link>
-                <a href="tel:+919811000000" className="btn-outline-light">
+                {/* <a href="tel:+919811000000" className="btn-outline-light">
                   Call +91 98110 00000
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -197,7 +199,7 @@ export function CtaBand({
 
 export function TrustBadge({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-lg border border-white/25 bg-white/95 px-4 py-3 shadow-soft">
+    <div className="border border-white/25 bg-white/95 px-4 py-3 shadow-soft">
       <p className="text-[13px] font-bold text-brand-goldDark">{title}</p>
       <p className="text-[11px] leading-snug text-brand-body">{text}</p>
     </div>

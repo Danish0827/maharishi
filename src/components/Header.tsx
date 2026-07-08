@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { label: "Home", href: "/" },
-  { label: "Panchakarma", href: "/panchakarma-delhi" },
-  { label: "Why Choose Us", href: "/#why" },
-  { label: "Care Journey", href: "/#journey" },
-  { label: "FAQs", href: "/#faq" },
+  { label: "Services", href: "#services" },
+  { label: "Who Should Consult", href: "#who-should-consult" },
+  { label: "Care Journey", href: "#journey" },
+  { label: "Why Maharishi", href: "#why" },
+  { label: "FAQs", href: "#faq" },
 ];
 
 const PHONE = "+91 98110 00000";
@@ -19,6 +19,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+console.log(pathname,"dadsdfdsf");
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -46,7 +47,7 @@ export default function Header() {
             {NAV.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={`${pathname}${item.href}`}
                 className="text-sm font-medium text-white/85 transition-colors hover:text-white"
               >
                 {item.label}
@@ -55,16 +56,16 @@ export default function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <a
+            {/* <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
               className="flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white"
             >
               <PhoneIcon />
               <span className="hidden xl:inline">{PHONE}</span>
-            </a>
+            </a> */}
             <Link
               href="/#book"
-              className="rounded-md bg-brand-goldLight px-4 py-2 text-sm font-semibold text-brand-goldDeep transition-colors hover:bg-white"
+              className="bg-brand-goldLight px-5 py-3 font-semibold text-brand-goldDeep transition-colors hover:bg-white"
             >
               Book Consultation
             </Link>

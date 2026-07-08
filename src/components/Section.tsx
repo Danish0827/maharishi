@@ -41,7 +41,7 @@ export function SectionHeading({
 export function CheckItem({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-start gap-3 text-[15px] leading-relaxed text-brand-body">
-      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-gold/15">
+      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center  bg-brand-gold/15">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
           <path d="M5 13l4 4L19 7" stroke="#9A7B2E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

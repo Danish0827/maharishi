@@ -68,11 +68,11 @@ const CONSULT = [
 ];
 
 const JOURNEY = [
-  { label: "Book a Session", text: "Share your concern and pick a time that suits you.", src: IMG.diffuser },
-  { label: "Vaidya Assessment", text: "Detailed prakriti and pulse-based evaluation.", src: IMG.shirodhara },
-  { label: "Personalised Plan", text: "Therapy, diet and herbal plan built for you.", src: IMG.herbalOil },
-  { label: "Guided Therapy", text: "Supervised treatment at our Shalimar Bagh centre.", src: IMG.oilTherapy },
-  { label: "Follow-Up", text: "Progress reviews and long-term lifestyle support.", src: IMG.yogaMountain },
+  { label: "Book a Session", text: "Share your concern and pick a time that suits you.", src: 'images/journey/1.webp' },
+  { label: "Vaidya Assessment", text: "Detailed prakriti and pulse-based evaluation.", src: 'images/journey/2.webp' },
+  { label: "Personalised Plan", text: "Therapy, diet and herbal plan built for you.", src: 'images/journey/3.webp' },
+  { label: "Guided Therapy", text: "Supervised treatment at our Shalimar Bagh centre.", src: 'images/journey/4.webp' },
+  { label: "Follow-Up", text: "Progress reviews and long-term lifestyle support.", src: 'images/journey/5.webp' },
 ];
 
 const STANDARDS = [
@@ -136,7 +136,7 @@ export default function HomePage() {
       />
 
       {/* Services */}
-      <Section className="bg-white relative overflow-hidden">
+      <Section id="services" className="bg-white relative overflow-hidden">
         <img
           src="/images/water1.svg"
           alt="Watermark"
@@ -156,7 +156,7 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
-      <Section className="bg-white relative ">
+      <Section id="who-should-consult" className="bg-white relative ">
         <img
           src="/images/water2.svg"
           alt="Watermark"
@@ -203,15 +203,15 @@ export default function HomePage() {
         </div>
       </Section>
       {/* Standards */}
-      <Section id="why" className="bg-white relative">
-         <img
+      <Section id="why" className="bg-white ">
+         {/* <img
           src="/images/water4.svg"
           alt="Watermark"
           className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
           style={{
             transform: `translateY(calc(-50% + ${offset}px))`,
           }}
-        />
+        /> */}
         <SectionHeading
               eyebrow="Why Choose Us"
               title="Authentic Ayurveda, Vedic Wisdom, Modern Hospital Standards"
@@ -251,11 +251,11 @@ export default function HomePage() {
       </Section>
 
       {/* Location */}
-      <Section className="bg-white ">
+      <Section className="bg-white relative">
          <img
           src="/images/water4.svg"
           alt="Watermark"
-          className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
+          className="absolute right-0 top-0 z-0 opacity-1 pointer-events-none"
           style={{
             transform: `translateY(calc(-50% + ${offset}px))`,
           }}

@@ -31,7 +31,7 @@ export default function HospitalFooter() {
           </p>
 
           {/* Contact Buttons */}
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          {/* <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="tel:+919310866852"
               className="flex items-center justify-center gap-3 border border-[#9A741D] px-8 py-3 text-[#8B6A17] transition hover:bg-[#8B6A17] hover:text-white"
@@ -47,20 +47,20 @@ export default function HospitalFooter() {
               <MessageCircle size={18} />
               <span>+91 93108 66852</span>
             </Link>
-          </div>
+          </div> */}
 
           {/* Copyright */}
-          <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[#E7DFC9] pt-5 text-sm text-[#8B6A17] md:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 border-t border-[#E7DFC9] pt-5 text-sm text-[#8B6A17] md:flex-row">
             <p>
               Copyright 2026, Maharishi Ayurveda Hospital. All rights reserved.
             </p>
 
-            <Link
+            {/* <Link
               href="/privacy-policy"
               className="hover:text-black transition"
             >
               Privacy Policy
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

@@ -66,7 +66,7 @@ export default function ConsultationForm({ variant = "consultation" }: Props) {
   return (
     <div
       id="book"
-      className="max-w-xl mx-auto rounded-xl border border-brand-line bg-white/95 p-6 shadow-card backdrop-blur sm:p-7"
+      className="max-w-xl mx-auto border border-brand-line bg-white/95 p-6 shadow-card backdrop-blur sm:p-7"
     >
       <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-brand-goldDark">
         <span className="h-1.5 w-1.5 rounded-full bg-green-600" /> Free Vaidya Call
@@ -98,12 +98,12 @@ export default function ConsultationForm({ variant = "consultation" }: Props) {
 
         <SelectField label="Primary concern" name="concern" options={CONCERNS} />
 
-        <div className="grid gap-3.5 sm:grid-cols-2">
+        {/* <div className="grid gap-3.5 sm:grid-cols-2">
           <Field label="Preferred date" name="date" type="date" />
           <Field label="City" name="city" placeholder="e.g. Delhi" />
         </div>
 
-        <Field label="Email" name="email" type="email" placeholder="you@email.com" />
+        <Field label="Email" name="email" type="email" placeholder="you@email.com" /> */}
 
         <label className="flex items-start gap-2.5 pt-1 text-[12.5px] leading-snug text-brand-body">
           <input
