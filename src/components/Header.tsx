@@ -64,7 +64,7 @@ console.log(pathname,"dadsdfdsf");
               <span className="hidden xl:inline">{PHONE}</span>
             </a> */}
             <Link
-              href="/#book"
+              href={`${pathname}#book`}
               className="bg-brand-goldLight px-5 py-3 font-semibold text-brand-goldDeep transition-colors hover:bg-white"
             >
               Book Consultation

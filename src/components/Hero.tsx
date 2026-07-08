@@ -44,9 +44,13 @@ export default function Hero({
           <span className="inline-flex leading-relaxed items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-goldLight">
             NABH Accredited - Shalimar Bagh, Delhi NCR
           </span>
-          <h1 className="mt-4 text-3xl font-extrabold leading-[1.12] text-white sm:text-4xl md:text-[46px] space-y-">
-            {title}{" "}
-            {highlight && <span className="text-brand-goldLight pt-5">{highlight}</span>}
+          <h1 className="mt-4 text-3xl font-extrabold  text-white sm:text-4xl md:text-[46px]">
+            {title}
+            {highlight && (
+              <span className="ml-2 text-brand-goldLight">
+                {highlight}
+              </span>
+            )}
           </h1>
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/80">
             {intro}

@@ -69,7 +69,7 @@ export default function ConsultationForm({ variant = "consultation" }: Props) {
       className="max-w-xl mx-auto border border-brand-line bg-white/95 p-6 shadow-card backdrop-blur sm:p-7"
     >
       <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-gold/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-brand-goldDark">
-        <span className="h-1.5 w-1.5 rounded-full bg-green-600" /> Free Vaidya Call
+        <span className="h-1.5 w-1.5 rounded-full bg-green-600" /> OPD Available
       </span>
       <h3 className="mt-3 text-xl font-bold text-brand-goldDark">{title}</h3>
       <p className="mt-1 text-[13px] leading-relaxed text-brand-body">{subtitle}</p>
