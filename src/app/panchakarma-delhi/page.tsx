@@ -326,7 +326,7 @@ export default function PanchakarmaPage() {
         <SectionHeading eyebrow="FAQs" title="Frequently Asked Questions" />
         <div className="mt-10 grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <GradientMedia tone="deep" src={IMG.spaProducts} overlay={0.45} className="hidden h-full min-h-[380px] rounded-xl lg:flex" label="Supervised, classical Panchakarma" />
+            <GradientMedia tone="deep" src={IMG.spaProducts} overlay={0.45} className="hidden h-full min-h-[380px]  lg:flex" label="Supervised, classical Panchakarma" />
           </Reveal>
           <Reveal delay={80}>
             <FaqAccordion items={FAQS} />

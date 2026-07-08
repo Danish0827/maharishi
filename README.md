@@ -9,7 +9,7 @@ A responsive Next.js (App Router) landing site built to match the Figma design
 | Route          | Figma frame | Purpose                                   |
 | -------------- | ----------- | ----------------------------------------- |
 | `/`            | Desktop 1   | NABH-Accredited Ayurvedic Hospital home   |
-| `/panchakarma` | Desktop 2   | Vaidya-Led Panchakarma landing            |
+| `/panchakarma-delhi` | Desktop 2   | Vaidya-Led Panchakarma landing            |
 | `/thank-you`   | -           | Confirmation shown after form submit      |
 | `/api/contact` | -           | Server route that emails form submissions |
 

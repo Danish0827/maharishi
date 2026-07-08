@@ -14,7 +14,7 @@ export default function FaqAccordion({ items }: { items: Faq[] }) {
         return (
           <div
             key={i}
-            className={`overflow-hidden rounded-lg border transition-colors ${
+            className={`overflow-hidden border transition-colors ${
               isOpen ? "border-brand-gold/50 bg-white" : "border-brand-line bg-white"
             }`}
           >

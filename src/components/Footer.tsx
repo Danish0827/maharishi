@@ -31,7 +31,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm">
             {[
               { label: "Home", href: "/" },
-              { label: "Panchakarma", href: "/panchakarma" },
+              { label: "Panchakarma", href: "/panchakarma-delhi" },
               { label: "Why Choose Us", href: "/#why" },
               { label: "Care Journey", href: "/#journey" },
               { label: "FAQs", href: "/#faq" },
