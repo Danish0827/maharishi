@@ -3,6 +3,7 @@ import { Karla } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HospitalFooter from "@/components/HospitalFooter";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -29,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={karla.variable}>
       <body className="font-sans antialiased">
-        <Header />
+        {/* <Header /> */}
         <main>{children}</main>
-        <Footer />
+        {/* <HospitalFooter /> */}
       </body>
     </html>
   );

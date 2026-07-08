@@ -6,6 +6,8 @@ import { ImageCard, NumberCard, StepCard, CtaBand, GradientMedia } from "@/compo
 import FaqAccordion from "@/components/FaqAccordion";
 import Reveal from "@/components/Reveal";
 import { IMG } from "@/lib/images";
+import Header from "@/components/Header";
+import HospitalFooter from "@/components/HospitalFooter";
 
 export const metadata: Metadata = {
   title: "Vaidya-Led Panchakarma in Delhi NCR",
@@ -104,6 +106,7 @@ const FAQS = [
 export default function PanchakarmaPage() {
   return (
     <>
+     <Header />
       <Hero
         title="Vaidya-Led Panchakarma in"
         highlight="Delhi NCR"
@@ -339,6 +342,7 @@ export default function PanchakarmaPage() {
         text="Book a Vaidya assessment and get a personalised, supervised Panchakarma plan - day-care or residential - built for lasting results."
         primary="Book Assessment"
       />
+       <HospitalFooter />
     </>
   );
 }

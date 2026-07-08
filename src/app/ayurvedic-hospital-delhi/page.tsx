@@ -8,6 +8,8 @@ import Link from "next/link";
 import { GradientMedia } from "@/components/blocks";
 import { IMG } from "@/lib/images";
 import { useEffect, useState } from "react";
+import Header from "@/components/Header";
+import HospitalFooter from "@/components/HospitalFooter";
 
 const HERO_BADGES = [
   { title: "NABH Accredited", text: "Audited hospital-grade safety" },
@@ -123,6 +125,7 @@ export default function HomePage() {
   }, []);
   return (
     <>
+     <Header />
       <Hero
         title="NABH-Accredited Ayurvedic Hospital in"
         highlight="Delhi NCR"
@@ -179,14 +182,7 @@ export default function HomePage() {
       </Section>
       {/* Care journey */}
       <Section id="journey" className="bg-white ">
-        <img
-          src="/images/water1.svg"
-          alt="Watermark"
-          className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
-          style={{
-            transform: `translateY(calc(-50% + ${offset}px))`,
-          }}
-        />
+       
         <SectionHeading
           eyebrow="How It Works"
           title="Your Care Journey at Maharishi Ayurveda Hospital"
@@ -207,15 +203,24 @@ export default function HomePage() {
         </div>
       </Section>
       {/* Standards */}
-      <Section id="why" className="bg-white">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <SectionHeading
+      <Section id="why" className="bg-white relative">
+         <img
+          src="/images/water4.svg"
+          alt="Watermark"
+          className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
+          style={{
+            transform: `translateY(calc(-50% + ${offset}px))`,
+          }}
+        />
+        <SectionHeading
               eyebrow="Why Choose Us"
               title="Authentic Ayurveda, Vedic Wisdom, Modern Hospital Standards"
               intro="You get the depth of classical Ayurveda with the accountability of a NABH-accredited hospital."
-              center={false}
+            
             />
+        <div className="grid items-center gap-12 lg:grid-cols-2 pt-10">
+          <div>
+            
             <ul className="mt-8 space-y-4">
               {STANDARDS.map((s) => (
                 <CheckItem key={s}>{s}</CheckItem>
@@ -246,9 +251,17 @@ export default function HomePage() {
       </Section>
 
       {/* Location */}
-      <Section className="bg-white">
+      <Section className="bg-white ">
+         <img
+          src="/images/water4.svg"
+          alt="Watermark"
+          className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
+          style={{
+            transform: `translateY(calc(-50% + ${offset}px))`,
+          }}
+        />
         <Reveal>
-          <div className="rounded-2xl border border-brand-line bg-brand-cream p-8 md:p-12">
+          <div className="border border-brand-line bg-brand-cream p-8 md:p-12">
             <div className="text-center">
               <p className="eyebrow">Find Us</p>
               <h2 className="h-section mt-2">Ayurvedic Hospital in Shalimar Bagh, Delhi</h2>
@@ -258,7 +271,7 @@ export default function HomePage() {
                 specialised Panchakarma and residential care.
               </p>
             </div>
-            <div className="mt-8 rounded-xl border border-brand-line bg-white p-6">
+            <div className="mt-8 border border-brand-line bg-white p-6">
               <h3 className="text-center text-sm font-bold uppercase tracking-wide text-brand-goldDark">
                 Traveling from Nearby Cities
               </h3>
@@ -275,7 +288,7 @@ export default function HomePage() {
                 ].map((city) => (
                   <div
                     key={city}
-                    className="rounded-md border border-brand-line bg-brand-cream px-3 py-2.5 text-center text-[13px] font-medium text-brand-ink"
+                    className="border border-brand-line bg-brand-cream px-3 py-2.5 text-center text-[13px] font-medium text-brand-ink"
                   >
                     {city}
                   </div>
@@ -290,7 +303,15 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ */}
-      <Section id="faq" className="bg-white">
+      <Section id="faq" className="bg-white relative">
+         <img
+          src="/images/water3.svg"
+          alt="Watermark"
+          className="absolute left-0 top-1/2 z-0 opacity-1 pointer-events-none"
+          style={{
+            transform: `translateY(calc(-50% + ${offset}px))`,
+          }}
+        />
         <SectionHeading eyebrow="FAQs" title="Frequently Asked Questions" />
         <div className="mt-10 grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
@@ -305,6 +326,7 @@ export default function HomePage() {
         title="Start Your Ayurveda Journey with Maharishi Ayurveda Hospital"
         text="Book a free consultation with a qualified Vaidya and get a personalised plan for root-cause healing - safely, and on your schedule."
       />
+      <HospitalFooter />
     </>
   );
 }

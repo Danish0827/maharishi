@@ -122,189 +122,190 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <>
-      <Hero
-        title="NABH-Accredited Ayurvedic Hospital in"
-        highlight="Delhi NCR"
-        intro="Authentic, Vaidya-led Ayurveda with the safety and record-keeping of a modern hospital. From OPD consultations to Panchakarma and residential wellness, we guide you to root-cause healing in Shalimar Bagh, Delhi NCR."
-        badges={HERO_BADGES}
-        bgSrc="/images/banner.webp"
-        formVariant="consultation"
-      />
+    <></>
+    // <>
+    //   <Hero
+    //     title="NABH-Accredited Ayurvedic Hospital in"
+    //     highlight="Delhi NCR"
+    //     intro="Authentic, Vaidya-led Ayurveda with the safety and record-keeping of a modern hospital. From OPD consultations to Panchakarma and residential wellness, we guide you to root-cause healing in Shalimar Bagh, Delhi NCR."
+    //     badges={HERO_BADGES}
+    //     bgSrc="/images/banner.webp"
+    //     formVariant="consultation"
+    //   />
 
-      {/* Services */}
-      <Section className="bg-white relative overflow-hidden">
-        <img
-          src="/images/water1.svg"
-          alt="Watermark"
-          className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
-          style={{
-            transform: `translateY(calc(-50% + ${offset}px))`,
-          }}
-        />
-        <SectionHeading
-          eyebrow=""
-          title="Ayurvedic OPD, Panchakarma, Residential Wellness and More"
-          intro="A full spectrum of authentic Ayurvedic care, delivered under hospital-grade supervision and tailored to your body type and concern."
-        />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s, i) => (
-            <ImageCard key={s.title} {...s} delay={i * 80} />
-          ))}
-        </div>
-      </Section>
-      <Section className="bg-white relative ">
-        <img
-          src="/images/water2.svg"
-          alt="Watermark"
-          className="absolute left-0 top-1/2 z-0 opacity-1 pointer-events-none"
-          style={{
-            transform: `translateY(calc(-50% + ${offset}px))`,
-          }}
-        />
-        <SectionHeading
-          eyebrow="Is This For You?"
-          title="Who Should Consult a Maharishi Ayurveda Vaidya?"
-          intro="If any of these sound familiar, a personalised Ayurvedic assessment can help you understand the root cause and a way forward."
-        />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {CONSULT.map((c, i) => (
-            <NumberCard key={c.title} n={i + 1} title={c.title} text={c.text} delay={i * 80} />
-          ))}
-        </div>
-        <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link href="#book" className="btn-primary">Book Your Consultation</Link>
-          <Link href="/panchakarma-delhi" className="btn-outline">Explore Panchakarma</Link>
-        </Reveal>
-      </Section>
-      {/* Care journey */}
-      <Section id="journey" className="bg-white ">
-        <img
-          src="/images/water1.svg"
-          alt="Watermark"
-          className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
-          style={{
-            transform: `translateY(calc(-50% + ${offset}px))`,
-          }}
-        />
-        <SectionHeading
-          eyebrow="How It Works"
-          title="Your Care Journey at Maharishi Ayurveda Hospital"
-          intro="A clear, guided path from your first call to long-term wellness - with a Vaidya reviewing every step."
-        />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {JOURNEY.map((s, i) => (
-            <StepCard
-              key={s.label}
-              n={i + 1}
-              label={s.label}
-              text={s.text}
-              src={s.src}
-              tone={i % 2 === 0 ? "deep" : "warm"}
-              delay={i * 70}
-            />
-          ))}
-        </div>
-      </Section>
-      {/* Standards */}
-      <Section id="why" className="bg-white">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              eyebrow="Why Choose Us"
-              title="Authentic Ayurveda, Vedic Wisdom, Modern Hospital Standards"
-              intro="You get the depth of classical Ayurveda with the accountability of a NABH-accredited hospital."
-              center={false}
-            />
-            <ul className="mt-8 space-y-4">
-              {STANDARDS.map((s) => (
-                <CheckItem key={s}>{s}</CheckItem>
-              ))}
-            </ul>
-          </div>
-          <Reveal>
-            <div className="overflow-hidden rounded-xl border border-brand-line bg-white shadow-card">
-              <div className="grid grid-cols-3 bg-brand-goldDark text-[13px] font-semibold text-white">
-                <div className="px-4 py-3">Aspect</div>
-                <div className="px-4 py-3">Typical Clinic</div>
-                <div className="px-4 py-3">Maharishi Hospital</div>
-              </div>
-              {COMPARE.map((row, i) => (
-                <div
-                  key={row[0]}
-                  className={`grid grid-cols-3 text-[13px] ${i % 2 ? "bg-brand-beige/40" : "bg-white"
-                    }`}
-                >
-                  <div className="px-4 py-3 font-semibold text-brand-ink">{row[0]}</div>
-                  <div className="px-4 py-3 text-brand-body">{row[1]}</div>
-                  <div className="px-4 py-3 font-medium text-brand-goldDark">{row[2]}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </Section>
+    //   {/* Services */}
+    //   <Section className="bg-white relative overflow-hidden">
+    //     <img
+    //       src="/images/water1.svg"
+    //       alt="Watermark"
+    //       className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
+    //       style={{
+    //         transform: `translateY(calc(-50% + ${offset}px))`,
+    //       }}
+    //     />
+    //     <SectionHeading
+    //       eyebrow=""
+    //       title="Ayurvedic OPD, Panchakarma, Residential Wellness and More"
+    //       intro="A full spectrum of authentic Ayurvedic care, delivered under hospital-grade supervision and tailored to your body type and concern."
+    //     />
+    //     <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    //       {SERVICES.map((s, i) => (
+    //         <ImageCard key={s.title} {...s} delay={i * 80} />
+    //       ))}
+    //     </div>
+    //   </Section>
+    //   <Section className="bg-white relative ">
+    //     <img
+    //       src="/images/water2.svg"
+    //       alt="Watermark"
+    //       className="absolute left-0 top-1/2 z-0 opacity-1 pointer-events-none"
+    //       style={{
+    //         transform: `translateY(calc(-50% + ${offset}px))`,
+    //       }}
+    //     />
+    //     <SectionHeading
+    //       eyebrow="Is This For You?"
+    //       title="Who Should Consult a Maharishi Ayurveda Vaidya?"
+    //       intro="If any of these sound familiar, a personalised Ayurvedic assessment can help you understand the root cause and a way forward."
+    //     />
+    //     <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    //       {CONSULT.map((c, i) => (
+    //         <NumberCard key={c.title} n={i + 1} title={c.title} text={c.text} delay={i * 80} />
+    //       ))}
+    //     </div>
+    //     <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+    //       <Link href="#book" className="btn-primary">Book Your Consultation</Link>
+    //       <Link href="/panchakarma-delhi" className="btn-outline">Explore Panchakarma</Link>
+    //     </Reveal>
+    //   </Section>
+    //   {/* Care journey */}
+    //   <Section id="journey" className="bg-white ">
+    //     <img
+    //       src="/images/water1.svg"
+    //       alt="Watermark"
+    //       className="absolute right-0 top-1/2 z-0 opacity-1 pointer-events-none"
+    //       style={{
+    //         transform: `translateY(calc(-50% + ${offset}px))`,
+    //       }}
+    //     />
+    //     <SectionHeading
+    //       eyebrow="How It Works"
+    //       title="Your Care Journey at Maharishi Ayurveda Hospital"
+    //       intro="A clear, guided path from your first call to long-term wellness - with a Vaidya reviewing every step."
+    //     />
+    //     <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+    //       {JOURNEY.map((s, i) => (
+    //         <StepCard
+    //           key={s.label}
+    //           n={i + 1}
+    //           label={s.label}
+    //           text={s.text}
+    //           src={s.src}
+    //           tone={i % 2 === 0 ? "deep" : "warm"}
+    //           delay={i * 70}
+    //         />
+    //       ))}
+    //     </div>
+    //   </Section>
+    //   {/* Standards */}
+    //   <Section id="why" className="bg-white">
+    //     <div className="grid items-center gap-12 lg:grid-cols-2">
+    //       <div>
+    //         <SectionHeading
+    //           eyebrow="Why Choose Us"
+    //           title="Authentic Ayurveda, Vedic Wisdom, Modern Hospital Standards"
+    //           intro="You get the depth of classical Ayurveda with the accountability of a NABH-accredited hospital."
+    //           center={false}
+    //         />
+    //         <ul className="mt-8 space-y-4">
+    //           {STANDARDS.map((s) => (
+    //             <CheckItem key={s}>{s}</CheckItem>
+    //           ))}
+    //         </ul>
+    //       </div>
+    //       <Reveal>
+    //         <div className="overflow-hidden rounded-xl border border-brand-line bg-white shadow-card">
+    //           <div className="grid grid-cols-3 bg-brand-goldDark text-[13px] font-semibold text-white">
+    //             <div className="px-4 py-3">Aspect</div>
+    //             <div className="px-4 py-3">Typical Clinic</div>
+    //             <div className="px-4 py-3">Maharishi Hospital</div>
+    //           </div>
+    //           {COMPARE.map((row, i) => (
+    //             <div
+    //               key={row[0]}
+    //               className={`grid grid-cols-3 text-[13px] ${i % 2 ? "bg-brand-beige/40" : "bg-white"
+    //                 }`}
+    //             >
+    //               <div className="px-4 py-3 font-semibold text-brand-ink">{row[0]}</div>
+    //               <div className="px-4 py-3 text-brand-body">{row[1]}</div>
+    //               <div className="px-4 py-3 font-medium text-brand-goldDark">{row[2]}</div>
+    //             </div>
+    //           ))}
+    //         </div>
+    //       </Reveal>
+    //     </div>
+    //   </Section>
 
-      {/* Location */}
-      <Section className="bg-white">
-        <Reveal>
-          <div className="rounded-2xl border border-brand-line bg-brand-cream p-8 md:p-12">
-            <div className="text-center">
-              <p className="eyebrow">Find Us</p>
-              <h2 className="h-section mt-2">Ayurvedic Hospital in Shalimar Bagh, Delhi</h2>
-              <p className="lede mt-4">
-                Centrally located in North-West Delhi with easy access from across
-                the NCR. Patients also travel to us from nearby cities for
-                specialised Panchakarma and residential care.
-              </p>
-            </div>
-            <div className="mt-8 rounded-xl border border-brand-line bg-white p-6">
-              <h3 className="text-center text-sm font-bold uppercase tracking-wide text-brand-goldDark">
-                Traveling from Nearby Cities
-              </h3>
-              <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                {[
-                  "Gurugram",
-                  "Noida",
-                  "Faridabad",
-                  "Ghaziabad",
-                  "Meerut",
-                  "Sonipat",
-                  "Rohtak",
-                  "Panipat",
-                ].map((city) => (
-                  <div
-                    key={city}
-                    className="rounded-md border border-brand-line bg-brand-cream px-3 py-2.5 text-center text-[13px] font-medium text-brand-ink"
-                  >
-                    {city}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 text-center">
-                <Link href="#book" className="btn-primary">Plan Your Visit</Link>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </Section>
+    //   {/* Location */}
+    //   <Section className="bg-white">
+    //     <Reveal>
+    //       <div className="rounded-2xl border border-brand-line bg-brand-cream p-8 md:p-12">
+    //         <div className="text-center">
+    //           <p className="eyebrow">Find Us</p>
+    //           <h2 className="h-section mt-2">Ayurvedic Hospital in Shalimar Bagh, Delhi</h2>
+    //           <p className="lede mt-4">
+    //             Centrally located in North-West Delhi with easy access from across
+    //             the NCR. Patients also travel to us from nearby cities for
+    //             specialised Panchakarma and residential care.
+    //           </p>
+    //         </div>
+    //         <div className="mt-8 rounded-xl border border-brand-line bg-white p-6">
+    //           <h3 className="text-center text-sm font-bold uppercase tracking-wide text-brand-goldDark">
+    //             Traveling from Nearby Cities
+    //           </h3>
+    //           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+    //             {[
+    //               "Gurugram",
+    //               "Noida",
+    //               "Faridabad",
+    //               "Ghaziabad",
+    //               "Meerut",
+    //               "Sonipat",
+    //               "Rohtak",
+    //               "Panipat",
+    //             ].map((city) => (
+    //               <div
+    //                 key={city}
+    //                 className="rounded-md border border-brand-line bg-brand-cream px-3 py-2.5 text-center text-[13px] font-medium text-brand-ink"
+    //               >
+    //                 {city}
+    //               </div>
+    //             ))}
+    //           </div>
+    //           <div className="mt-6 text-center">
+    //             <Link href="#book" className="btn-primary">Plan Your Visit</Link>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </Reveal>
+    //   </Section>
 
-      {/* FAQ */}
-      <Section id="faq" className="bg-white">
-        <SectionHeading eyebrow="FAQs" title="Frequently Asked Questions" />
-        <div className="mt-10 grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal>
-            <GradientMedia tone="warm" src={IMG.massage} overlay={0.4} className="hidden h-full min-h-[380px] lg:flex" label="Calm, clinical, Vaidya-led care" />
-          </Reveal>
-          <Reveal delay={80}>
-            <FaqAccordion items={FAQS} />
-          </Reveal>
-        </div>
-      </Section>
-      <CtaBand
-        title="Start Your Ayurveda Journey with Maharishi Ayurveda Hospital"
-        text="Book a free consultation with a qualified Vaidya and get a personalised plan for root-cause healing - safely, and on your schedule."
-      />
-    </>
+    //   {/* FAQ */}
+    //   <Section id="faq" className="bg-white">
+    //     <SectionHeading eyebrow="FAQs" title="Frequently Asked Questions" />
+    //     <div className="mt-10 grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+    //       <Reveal>
+    //         <GradientMedia tone="warm" src={IMG.massage} overlay={0.4} className="hidden h-full min-h-[380px] lg:flex" label="Calm, clinical, Vaidya-led care" />
+    //       </Reveal>
+    //       <Reveal delay={80}>
+    //         <FaqAccordion items={FAQS} />
+    //       </Reveal>
+    //     </div>
+    //   </Section>
+    //   <CtaBand
+    //     title="Start Your Ayurveda Journey with Maharishi Ayurveda Hospital"
+    //     text="Book a free consultation with a qualified Vaidya and get a personalised plan for root-cause healing - safely, and on your schedule."
+    //   />
+    // </>
   );
 }

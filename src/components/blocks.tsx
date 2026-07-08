@@ -172,7 +172,7 @@ export function CtaBand({
     <section className="py-16 md:py-20">
       <div className="container-page">
         <Reveal>
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-goldDark via-brand-goldDeep to-[#3F3110] px-6 py-12 text-center md:px-12 md:py-16">
+          <div className="relative overflow-hidden  bg-gradient-to-br from-brand-goldDark via-brand-goldDeep to-[#3F3110] px-6 py-12 text-center md:px-12 md:py-16">
             <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(circle_at_80%_20%,rgba(199,166,79,.7),transparent_50%)]" />
             <div className="relative z-10 mx-auto max-w-2xl">
               <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-[32px]">
