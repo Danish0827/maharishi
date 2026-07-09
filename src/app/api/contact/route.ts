@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const to = process.env.CONTACT_TO_EMAIL || "danish@healthus.ai";
+  const to = ["danish@healthus.ai","healthusads@gmail.com"];
   const from =
     process.env.CONTACT_FROM_EMAIL || process.env.SMTP_USER || to;
 
