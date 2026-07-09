@@ -11,6 +11,7 @@ export default function Hero({
   badges,
   bgSrc,
   formVariant = "consultation",
+  source,
   primaryCta = "Book Free Consultation",
   secondaryCta = "Talk to a Vaidya",
 }: {
@@ -20,6 +21,7 @@ export default function Hero({
   badges: Badge[];
   bgSrc?: string;
   formVariant?: "consultation" | "panchakarma";
+  source?: string;
   primaryCta?: string;
   secondaryCta?: string;
 }) {
@@ -70,7 +72,7 @@ export default function Hero({
           </div>
         </div>
         <div className="lg:pl-4">
-          <ConsultationForm variant={formVariant} />
+          <ConsultationForm variant={formVariant} source={source} />
         </div>
       </div>
     </section>

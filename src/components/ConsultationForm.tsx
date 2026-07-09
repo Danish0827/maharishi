@@ -2,9 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import FancySelect from "./FancySelect";
 
 type Props = {
   variant?: "consultation" | "panchakarma";
+  source?: string;
 };
 
 const CONCERNS = [
@@ -16,7 +18,10 @@ const CONCERNS = [
   "General Consultation",
 ];
 
-export default function ConsultationForm({ variant = "consultation" }: Props) {
+export default function ConsultationForm({
+  variant = "consultation",
+  source,
+}: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -48,7 +53,12 @@ export default function ConsultationForm({ variant = "consultation" }: Props) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, formType: title }),
+        body: JSON.stringify({
+          ...data,
+          formType: title,
+          source: source || title,
+          pageUrl: typeof window !== "undefined" ? window.location.href : "",
+        }),
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(json?.error || "Something went wrong.");
@@ -96,7 +106,12 @@ export default function ConsultationForm({ variant = "consultation" }: Props) {
           />
         </div>
 
-        <SelectField label="Primary concern" name="concern" options={CONCERNS} />
+        <FancySelect
+          label="Primary concern"
+          name="concern"
+          options={CONCERNS}
+          placeholder="Select your concern"
+        />
 
         {/* <div className="grid gap-3.5 sm:grid-cols-2">
           <Field label="Preferred date" name="date" type="date" />
@@ -164,32 +179,3 @@ function Field({
   );
 }
 
-function SelectField({
-  label,
-  name,
-  options,
-}: {
-  label: string;
-  name: string;
-  options: string[];
-}) {
-  return (
-    <label className="block">
-      <span className="mb-1 block text-[12px] font-medium text-brand-ink">{label}</span>
-      <select
-        name={name}
-        defaultValue=""
-        className="w-full appearance-none rounded-md border border-brand-line bg-white px-3 py-2.5 text-sm text-brand-ink outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20"
-      >
-        <option value="" disabled>
-          Select your concern
-        </option>
-        {options.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
