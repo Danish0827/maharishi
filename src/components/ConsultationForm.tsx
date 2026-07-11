@@ -55,6 +55,8 @@ export default function ConsultationForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
+          variant,
+          dialCode: "+91",
           formType: title,
           source: source || title,
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
@@ -97,13 +99,7 @@ export default function ConsultationForm({
 
         <div className="grid gap-3.5 sm:grid-cols-2">
           <Field label="First name" name="firstName" placeholder="Your name" required />
-          <Field
-            label="Phone number"
-            name="phone"
-            type="tel"
-            placeholder="10-digit mobile"
-            required
-          />
+          <PhoneField />
         </div>
 
         <FancySelect
@@ -147,6 +143,35 @@ export default function ConsultationForm({
         </p>
       </form>
     </div>
+  );
+}
+
+function PhoneField() {
+  return (
+    <label className="block">
+      <span className="mb-1 block text-[12px] font-medium text-brand-ink">
+        Phone number <span className="text-brand-gold">*</span>
+      </span>
+      <div className="flex items-stretch overflow-hidden rounded-md border border-brand-line bg-white transition-colors focus-within:border-brand-gold focus-within:ring-2 focus-within:ring-brand-gold/20">
+        <span className="flex items-center gap-1 border-r border-brand-line bg-brand-cream px-3 text-sm font-semibold text-brand-goldDark">
+          +91
+        </span>
+        <input
+          name="phone"
+          type="tel"
+          inputMode="numeric"
+          autoComplete="tel-national"
+          required
+          maxLength={10}
+          placeholder="10-digit mobile"
+          onInput={(e) => {
+            const el = e.currentTarget;
+            el.value = el.value.replace(/\D/g, "").slice(0, 10);
+          }}
+          className="w-full bg-white px-3 py-2.5 text-sm text-brand-ink outline-none placeholder:text-brand-muted"
+        />
+      </div>
+    </label>
   );
 }
 
