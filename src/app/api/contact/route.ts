@@ -25,7 +25,7 @@ const PAGE_URLS: Record<string, string> = {
 /* Where the notification email is delivered (env overrides the default list) */
 const EMAIL_RECIPIENTS = process.env.CONTACT_TO_EMAIL
   ? process.env.CONTACT_TO_EMAIL.split(",").map((s) => s.trim()).filter(Boolean)
-  : ["danish@healthus.ai", "healthusads@gmail.com", "crm@mahospital.org"];
+  : ["healthusads@gmail.com", "crm@mahospital.org"];
 
 const FIELD_LABELS: Record<string, string> = {
   formType: "Form",
